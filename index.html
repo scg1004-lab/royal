@@ -49,6 +49,12 @@
     </header>
 
     <main>
+      <div class="tab-content active" id="view-resumen">
+        <div class="summary-list" id="summary-alas">
+          <!-- Summary cards -->
+        </div>
+      </div>
+
       <div class="tab-content" id="view-mapa">
         <section class="card map-section">
           <div class="card-header">
@@ -86,25 +92,13 @@
           <!-- Rooms will be rendered here -->
         </div>
       </div>
-
-      <div class="tab-content active" id="view-resumen">
-        <section class="card pdf-preview-section">
-          <div class="card-header">
-            <h2>VISOR DE INFORME</h2>
-            <p>Documento técnico del proyecto</p>
-          </div>
-          <div class="pdf-wrapper" style="width: 100%; height: 700px; overflow: hidden; border-radius: 8px;">
-            <iframe src="informe-royal.pdf" width="100%" height="100%" frameborder="0" style="border: none;"></iframe>
-          </div>
-        </section>
-
-        <div class="summary-list" id="summary-alas">
-          <!-- Summary cards -->
-        </div>
-      </div>
     </main>
 
     <nav class="bottom-nav">
+      <button class="nav-item active" data-view="resumen">
+        <span class="icon">📊</span>
+        <span class="label">RESUMEN</span>
+      </button>
       <button class="nav-item" data-view="mapa">
         <span class="icon">🗺️</span>
         <span class="label">MAPA</span>
@@ -112,10 +106,6 @@
       <button class="nav-item" data-view="habitaciones">
         <span class="icon">🔑</span>
         <span class="label">HAB.</span>
-      </button>
-      <button class="nav-item active" data-view="resumen">
-        <span class="icon">📊</span>
-        <span class="label">RESUMEN</span>
       </button>
     </nav>
   </div>
