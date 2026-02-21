@@ -10,10 +10,10 @@ const ALAS = [
 ];
 
 const CAT_COLORS = {
-  'Estandar': { bg: 'rgba(255,255,255,0.05)', text: '#9A9080' },
-  'Superior': { bg: 'rgba(21,101,192,0.2)', text: '#64B5F6' },
-  'Junior Suite': { bg: 'rgba(230,120,0,0.2)', text: '#FFB74D' },
-  'Suite': { bg: 'rgba(198,40,40,0.2)', text: '#EF9A9A' },
+  'Estandar': { bg: '#F1F3F4', text: '#5F6368' },
+  'Superior': { bg: '#E8F0FE', text: '#1967D2' },
+  'Junior Suite': { bg: '#FEF7E0', text: '#B06000' },
+  'Suite': { bg: '#FCE8E6', text: '#C5221F' },
 };
 
 const CAMAS = { 'Estandar': 'Doble / Twin', 'Superior': 'King / Doble', 'Junior Suite': 'King', 'Suite': 'King + Sofa' };
@@ -23,7 +23,7 @@ function generateRooms() {
   const rooms = [];
   const d = { p1: { 'Estandar': 8, 'Superior': 4 }, p2: { 'Estandar': 8, 'Superior': 3, 'Junior Suite': 1 }, p3: { 'Estandar': 7, 'Superior': 3, 'Junior Suite': 1 }, p4: { 'Superior': 6, 'Junior Suite': 3, 'Suite': 2 } };
   const dJ = { p1: { 'Estandar': 8, 'Superior': 4 }, p2: { 'Estandar': 6, 'Superior': 3, 'Junior Suite': 2 }, p3: { 'Estandar': 5, 'Superior': 3, 'Junior Suite': 2, 'Suite': 1 }, p4: { 'Junior Suite': 5, 'Suite': 6 } };
-  
+
   ALAS.forEach(a => {
     const dist = a.nombre === 'JARDIN' ? dJ : d;
     [1, 2, 3, 4].forEach((p, pi) => {
@@ -57,7 +57,7 @@ document.querySelectorAll('.nav-item').forEach(btn => {
     const view = btn.dataset.view;
     document.querySelectorAll('.tab-content').forEach(p => p.classList.remove('active'));
     document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
-    
+
     document.getElementById(`view-${view}`).classList.add('active');
     btn.classList.add('active');
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -83,11 +83,11 @@ function renderAlas() {
 function renderFilters() {
   const alas = ['TODAS', ...ALAS.map(a => a.nombre)];
   const cats = ['TODAS', 'Estandar', 'Superior', 'Junior Suite', 'Suite'];
-  
+
   document.getElementById('filter-alas').innerHTML = alas.map(a => `
     <button class="btn-filter ${a === activeAla ? 'active' : ''}" onclick="window.setAlaFilter('${a}')">${a}</button>
   `).join('');
-  
+
   document.getElementById('filter-cats').innerHTML = cats.map(c => `
     <button class="btn-filter ${c === activeCat ? 'active' : ''}" onclick="window.setCatFilter('${c}')">${c}</button>
   `).join('');
@@ -97,9 +97,9 @@ function renderRooms() {
   let filtered = ALL_ROOMS;
   if (activeAla !== 'TODAS') filtered = filtered.filter(r => r.ala === activeAla);
   if (activeCat !== 'TODAS') filtered = filtered.filter(r => r.cat === activeCat);
-  
+
   document.getElementById('rooms-count').textContent = `${filtered.length} habitaciones encontradas`;
-  
+
   const container = document.getElementById('rooms-grid');
   container.innerHTML = filtered.map(r => {
     const cc = CAT_COLORS[r.cat] || { bg: 'rgba(255,255,255,0.05)', text: '#9A9080' };
