@@ -74,6 +74,105 @@ h1 .accent {
   overflow: hidden;
 }
 
+/* Docs Section */
+.docs-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.doc-link {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text);
+  transition: all 0.3s ease;
+}
+
+.doc-link:hover {
+  background: rgba(201, 168, 76, 0.1);
+  border-color: var(--gold);
+  transform: translateY(-2px);
+}
+
+.doc-icon {
+  font-size: 24px;
+  background: rgba(201, 168, 76, 0.1);
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+.doc-info {
+  flex: 1;
+}
+
+.doc-title {
+  display: block;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+.doc-type {
+  font-size: 11px;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.doc-action {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  padding: 4px 10px;
+  border-radius: 4px;
+  opacity: 0.8;
+}
+
+.doc-link:hover .doc-action {
+  background: var(--gold);
+  color: var(--bg);
+  opacity: 1;
+}
+
+/* Summary Stats Large */
+.summary-stats-large {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.large-stat {
+  text-align: center;
+}
+
+.large-stat .val {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 56px;
+  line-height: 1;
+  color: var(--gold);
+  font-weight: 300;
+}
+
+.large-stat .lab {
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: var(--text-dim);
+  text-transform: uppercase;
+}
+
 .stat-item {
   background: var(--bg);
   padding: 12px 20px;
@@ -114,8 +213,15 @@ main {
 }
 
 @keyframes slideIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Cards */
@@ -150,7 +256,7 @@ main {
   border-radius: 8px;
   overflow: hidden;
   position: relative;
-  border: 1px solid rgba(255,255,255,0.05);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .map-container img {
@@ -186,7 +292,7 @@ main {
 
 .ala-card:hover {
   transform: translateX(5px);
-  background: rgba(255,255,255,0.06);
+  background: rgba(255, 255, 255, 0.06);
   border-color: var(--gold);
 }
 
@@ -242,8 +348,8 @@ main {
 }
 
 .btn-filter {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   color: var(--text-dim);
   padding: 8px 16px;
   border-radius: 6px;
@@ -278,7 +384,7 @@ main {
 
 .room-card {
   background: var(--card-bg);
-  border: 1px solid rgba(255,255,255,0.05);
+  border: 1px solid rgba(255, 255, 255, 0.05);
   border-left: 3px solid var(--ala-color);
   padding: 16px;
   border-radius: 8px;
@@ -287,7 +393,7 @@ main {
 
 .room-card:hover {
   transform: translateY(-3px);
-  background: rgba(255,255,255,0.08);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .room-code {
@@ -308,7 +414,7 @@ main {
   font-size: 8px;
   padding: 2px 8px;
   border-radius: 4px;
-  background: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.1);
   margin-top: 8px;
   text-transform: uppercase;
 }
@@ -363,6 +469,7 @@ main {
   .quick-stats {
     width: 100%;
   }
+
   .stat-item {
     flex: 1;
   }
