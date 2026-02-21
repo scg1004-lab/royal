@@ -1,111 +1,141 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Impressive Royal · Nomenclatura</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <script type="module" crossorigin src="/assets/index-tid8XK9H.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-EKkhc9gp.css">
-  </head>
-  <body>
-    <div id="app">
-      <header>
-        <div class="header-content">
-          <div class="brand">
-            <h1>IMPRESSIVE <span class="accent">ROYAL</span></h1>
-            <p class="subtitle">SISTEMA ESTRATÉGICO DE NOMENCLATURA</p>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Impressive Royal · Nomenclatura</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Outfit:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <script type="module" crossorigin src="/assets/index-DL7m_zpg.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-8oRyLx_z.css">
+</head>
+
+<body>
+  <div id="app">
+    <header>
+      <div class="header-content">
+        <div class="brand">
+          <h1>IMPRESSIVE <span class="accent">ROYAL</span></h1>
+          <p class="subtitle">SISTEMA ESTRATÉGICO DE NOMENCLATURA</p>
+        </div>
+        <div class="quick-stats">
+          <div class="stat-item">
+            <span class="stat-value">275</span>
+            <span class="stat-label">HABITACIONES</span>
           </div>
-          <div class="quick-stats">
-            <div class="stat-item">
-              <span class="stat-value">275</span>
-              <span class="stat-label">HABITACIONES</span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-value">6</span>
-              <span class="stat-label">ALAS</span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-value">4</span>
-              <span class="stat-label">PLANTAS</span>
-            </div>
+          <div class="stat-item">
+            <span class="stat-value">6</span>
+            <span class="stat-label">ALAS</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">4</span>
+            <span class="stat-label">PLANTAS</span>
           </div>
         </div>
-      </header>
+      </div>
+    </header>
 
-      <main>
-        <div class="tab-content active" id="view-mapa">
-          <section class="card map-section">
-            <div class="card-header">
-              <h2>MAPA GENERAL</h2>
-              <p>Distribución de bloques y orientación</p>
-            </div>
-            <div class="map-container">
-              <img src="/maparoyal.jpeg" alt="Mapa Royal" id="main-map">
-              <div class="map-overlay"></div>
-            </div>
-          </section>
+    <main>
+      <div class="tab-content active" id="view-mapa">
+        <section class="card map-section">
+          <div class="card-header">
+            <h2>MAPA GENERAL</h2>
+            <p>Distribución de bloques y orientación</p>
+          </div>
+          <div class="map-container">
+            <img src="/maparoyal.jpeg" alt="Mapa Royal" id="main-map">
+            <div class="map-overlay"></div>
+          </div>
+        </section>
 
-          <section class="alas-grid" id="alas-container">
-            <!-- Alas will be rendered here -->
-          </section>
+        <section class="alas-grid" id="alas-container">
+          <!-- Alas will be rendered here -->
+        </section>
+      </div>
+
+      <div class="tab-content" id="view-habitaciones">
+        <section class="filters card">
+          <div class="filter-group">
+            <label>FILTRAR POR ALA</label>
+            <div class="filter-options" id="filter-alas"></div>
+          </div>
+          <div class="filter-group">
+            <label>CATEGORÍA</label>
+            <div class="filter-options" id="filter-cats"></div>
+          </div>
+        </section>
+
+        <div class="rooms-status">
+          <span id="rooms-count">0 habitaciones</span>
         </div>
 
-        <div class="tab-content" id="view-habitaciones">
-          <section class="filters card">
-            <div class="filter-group">
-              <label>FILTRAR POR ALA</label>
-              <div class="filter-options" id="filter-alas"></div>
-            </div>
-            <div class="filter-group">
-              <label>CATEGORÍA</label>
-              <div class="filter-options" id="filter-cats"></div>
-            </div>
-          </section>
-          
-          <div class="rooms-status">
-            <span id="rooms-count">0 habitaciones</span>
-          </div>
-
-          <div class="rooms-grid" id="rooms-grid">
-            <!-- Rooms will be rendered here -->
-          </div>
+        <div class="rooms-grid" id="rooms-grid">
+          <!-- Rooms will be rendered here -->
         </div>
+      </div>
 
-        <div class="tab-content" id="view-resumen">
-          <section class="summary-hero card">
-            <div class="summary-stats-large">
-               <div class="large-stat">
-                 <span class="val">275</span>
-                 <span class="lab">TOTAL</span>
-               </div>
-               <div class="large-stat">
-                 <span class="val">100%</span>
-                 <span class="lab">CARGADO</span>
-               </div>
+      <div class="tab-content" id="view-resumen">
+        <section class="summary-hero card">
+          <div class="summary-stats-large">
+            <div class="large-stat">
+              <span class="val">275</span>
+              <span class="lab">TOTAL</span>
             </div>
-          </section>
-          <div class="summary-list" id="summary-alas">
-            <!-- Summary cards -->
+            <div class="large-stat">
+              <span class="val">100%</span>
+              <span class="lab">CARGADO</span>
+            </div>
           </div>
-        </div>
-      </main>
+        </section>
+        <section class="card docs-section">
+          <div class="card-header">
+            <h2>DOCUMENTACIÓN</h2>
+            <p>Informes y archivos técnicos</p>
+          </div>
+          <div class="docs-grid">
+            <a href="/informe.pdf" target="_blank" class="doc-link">
+              <span class="doc-icon">📄</span>
+              <div class="doc-info">
+                <span class="doc-title">Informe Nomenclatura</span>
+                <span class="doc-type">Project PDF Report</span>
+              </div>
+              <span class="doc-action">VER</span>
+            </a>
+            <a href="/nomenclatura.xlsx" download class="doc-link">
+              <span class="doc-icon">📊</span>
+              <div class="doc-info">
+                <span class="doc-title">Excel Explicativo</span>
+                <span class="doc-type">Nomenclatura v4</span>
+              </div>
+              <span class="doc-action">DESCARGAR</span>
+            </a>
+          </div>
+        </section>
 
-      <nav class="bottom-nav">
-        <button class="nav-item active" data-view="mapa">
-          <span class="icon">🗺️</span>
-          <span class="label">MAPA</span>
-        </button>
-        <button class="nav-item" data-view="habitaciones">
-          <span class="icon">🔑</span>
-          <span class="label">HAB.</span>
-        </button>
-        <button class="nav-item" data-view="resumen">
-          <span class="icon">📊</span>
-          <span class="label">RESUMEN</span>
-        </button>
-      </nav>
-    </div>
-  </body>
+        <div class="summary-list" id="summary-alas">
+          <!-- Summary cards -->
+        </div>
+      </div>
+    </main>
+
+    <nav class="bottom-nav">
+      <button class="nav-item active" data-view="mapa">
+        <span class="icon">🗺️</span>
+        <span class="label">MAPA</span>
+      </button>
+      <button class="nav-item" data-view="habitaciones">
+        <span class="icon">🔑</span>
+        <span class="label">HAB.</span>
+      </button>
+      <button class="nav-item" data-view="resumen">
+        <span class="icon">📊</span>
+        <span class="label">RESUMEN</span>
+      </button>
+    </nav>
+  </div>
+</body>
+
 </html>
